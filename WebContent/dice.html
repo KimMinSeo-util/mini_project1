@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>quest1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./css/back2.css"> 
+
+  <style> 
+      #btn1 {
+      			display: inline-block;
+      			padding: 10px;
+      			background: orange;
+     			color: white;
+      			cursor: pointer;
+      			margin-left: 20%;
+      }
+       #btn2 {
+      			display: inline-block;
+      			padding: 10px;
+      			background: orange;
+     			color: white;
+      			cursor: pointer;
+      			margin-left: 40%;
+      }
+      
+       
+      #die {
+      			display: block;
+      			width: 100px;
+      			height: 100px;
+      			margin: 0 auto;
+      			margin-top: 10%;
+      			margin-left: 45%;
+      			background: white;
+      } 
+      body{
+      	background-image: url('./img/monopoly.jpg');
+      	background-size: 100%;
+      }
+  </style> 
+  
+    <script type="text/javascript">
+	
+	window.onload = function(){
+		$('#screen2').hide()
+	};
+	
+	$(function(){
+		
+		$('#screen1').click(function(){
+			$("#screen2").slideToggle(6000)
+		});
+		
+		$('#screen3').click(function(){
+			$("#screen2").slideUp(6000)
+		});
+		
+		$('#btn').click(function(){
+			$('#screen2').stop()
+	});
+	});
+
+</script>
+  
+</head>
+<body>
+<div id="screen1">
+[ 게 임 설 명 ]
+</div>
+
+<div id="screen2">
+<span id="middle">
+1. play1과 play2를 정하세요<br>
+2. 서로 돌아가면서 주사위를 굴리세요<br>
+3. 더 높은 숫자가 나오는 사람이 WIN!
+</span>
+</div>
+
+<div id="screen3">
+u n d e r s t a n d
+</div>
+
+<br>
+<button id="btn"> Stop sliding </button>
+
+</body>  
+  
+</head> 
+<body> 
+  <img id="die" />
+  <div id="btn1"> play1 </div> 
+  <script> 
+      let btn1 = document.getElementById("btn1"), die = document.getElementById("die"), dievalue = 0, imgsrc = ""; 
+      btn1.onclick = function() { 
+            dievalue = Math.floor((Math.random() * 6) + 1); 
+            switch(dievalue) { 
+                  case 1: 
+                      imgsrc = "./img/1.png"; 
+                      break; 
+                  case 2: 
+                      imgsrc = "./img/2.png"; 
+                      break; 
+                  case 3: 
+                      imgsrc = "./img/3.png"; 
+                      break; 
+                  case 4: 
+                      imgsrc = "./img/4.png"; 
+                      break; 
+                  case 5: 
+                      imgsrc = "./img/5.png"; 
+                      break; 
+                  case 6: 
+                      imgsrc = "./img/6.png"; 
+                      break; 
+                  default: 
+                      imgsrc = "./img/pink.jpg"; 
+                      break; 
+           } 
+           die.src = imgsrc; 
+      };   
+      </script>
+      
+      <div id="btn2"> play2 </div> 
+      <script> 
+          let btn2 = document.getElementById("btn2"), die2 = document.getElementById("die2"), dievalue2 = 0, imgsrc2 = ""; 
+          btn2.onclick = function() { 
+                dievalue2 = Math.floor((Math.random() * 6) + 1); 
+                switch(dievalue2) { 
+                      case 1: 
+                          imgsrc2 = "./img/1.png"; 
+                          break; 
+                      case 2: 
+                          imgsrc2 = "./img/2.png"; 
+                          break; 
+                      case 3: 
+                          imgsrc2 = "./img/3.png"; 
+                          break; 
+                      case 4: 
+                          imgsrc2 = "./img/4.png"; 
+                          break; 
+                      case 5: 
+                          imgsrc2 = "./img/5.png"; 
+                          break; 
+                      case 6: 
+                          imgsrc2 = "./img/6.png"; 
+                          break; 
+                      default: 
+                          imgsrc2 = "./img/pink.jpg"; 
+                          break; 
+               } 
+               die.src = imgsrc2; 
+          };   
+  </script> 
+</html>

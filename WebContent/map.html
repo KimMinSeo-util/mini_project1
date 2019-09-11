@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAP GAME</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./css/back1.css">
+
+<style type="text/css">
+
+body{
+	background-image: url("img/beach.jpg");
+}
+#title{
+		text-align: center;
+		font-size: 30px;
+		color: white;
+		margin-top: 10%;
+		text-decoration: none;
+}
+#close{
+	text-decoration: underline;
+	color: purple;
+	cursor: pointer;
+}
+
+</style>
+<script>
+$(function(){
+	$('#close').click(function(){
+		close();		
+	})
+});
+</script>
+
+</head>
+<body>
+
+<p id="title"> &#129336; Let's play the GAME &#127918;</p>
+<table>
+	<tr><th><a href="./user.html"> L O G I N </th></tr>
+	<tr><th><a href="./start.html"> S T A R T </a></th></tr>
+	<tr><th id="close"> Q U I T </th></tr>
+</table>
+
+</body>
+</html>

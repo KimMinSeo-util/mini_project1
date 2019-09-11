@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<title>  User 회원가입  </title>
+
+<style type="text/css">
+	h3{
+		margin-top: 10%;
+		text-align: center;
+		color: orange;
+	}
+	.error{
+		color: red;
+	}
+	table{
+		margin: 0 auto;
+	}
+	div{
+		margin-left: 42%;
+	}
+	body{
+		background-image: url('./img/login2.gif');
+		background-size: 100%;
+		color: slateblue;
+		font-weight: bold;
+	}
+</style>
+
+<script type="text/javascript">
+const log = console.log;
+let xdata;
+
+$(function (){
+	$('#id_check').click(function(){
+		idcheck();
+	});
+});
+
+function idcheck(){
+	$.ajax({
+		url:'json/id_check.jsp',
+		dataType: 'json',
+		data: {
+			id:$('#id').val()
+		},
+		success: function(data){
+			//xdata = data;
+			//alert("success: "+data.id);
+			if(data.id == undefined){
+				$('#msg1').html('사용 가능한 id입니다.')
+			}else{
+				$('#msg1').html('사용 중인 id입니다.')
+			}
+		},
+		error:function(e){
+			alert("error "+e);
+		}
+	});
+}
+
+</script>
+
+
+</head>
+<body>
+
+<h3> &#128587; 회 원 가 입 &#128129;	 </h3>
+
+<form action="adduser.jsp" method="get">
+
+<table border="1">
+<tr>
+		<td><label for="id">  &#127752;ID  </label></td>
+	<td>
+		<input type="text" id="id" name="id" value="" />
+		<input type="button" value="ID중복체크" id="id_check">
+		<br>
+		<span id="msg1" class="error"></span>
+	</td>
+	</tr>
+	<tr>
+		<td><label for="pw">  &#127752;PW  </label></td>
+		<td> <input type="password" id="pw" name="pw" value="" /></td>
+	</tr>
+	<tr>
+		<td><label for="name">  &#127752;Name  </label></td>
+		<td> <input type="text" id="name" name="name" value="" /></td>
+	</tr>
+	<td> <label for="role">  &#127752;Role  </label> </td>
+	<td>	<input type="radio" id="role1" name="role" value="admin"> 관리자
+			<input type="radio" id="role2" name="role" value="user"> 사용자
+	</td>
+	</tr>
+
+</table>
+<div>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="회원가입">
+<input type="reset" value="취소">
+</div>
+</form>
+</body>
+</html>

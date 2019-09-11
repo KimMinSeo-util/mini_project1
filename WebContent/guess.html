@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guess number</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./css/back3.css">
+
+<script type="text/javascript">
+	
+	window.onload = function(){
+		$('#screen2').hide()
+	};
+	
+	$(function(){
+		
+		$('#screen1').click(function(){
+			$("#screen2").slideToggle(6000)
+		});
+		
+		$('#screen3').click(function(){
+			$("#screen2").slideUp(6000)
+		});
+		
+		$('#btn').click(function(){
+			$('#screen2').stop()
+	});
+	});
+	
+
+
+</script>
+
+
+
+</head>
+<body>
+<div id="screen1">
+[ 게 임 설 명 ]
+</div>
+
+<div id="screen2">
+<span id="middle">
+1. computer가 생각한 숫자를 유추한다. <br>
+2. computer가 생각한 숫자보다 높거나,<br>
+3. computer가 생각한 숫자보다 낮추어서<br>
+4. 정답에 근접한 숫자를 입력한다.<br>
+5. 맞추면 WIN!
+</span>
+</div>
+
+<div id="screen3">
+u n d e r s t a n d
+</div>
+
+<br>
+<button id="btn"> Stop sliding </button>
+
+</body>
+
+
+
+<style>
+body{
+	
+	background-image: url("img/gamble1.jpg");
+	background-size: 100%;
+	
+}
+#game{
+	text-align:center;
+	margin: 0 auto;
+	color: white;
+}
+h2{
+	color:white;
+	margin-top: 10%;
+}
+
+
+</style>
+
+<script type="text/javascript">
+	let r = Math.floor(Math.random() * 100) + 1;
+	let nGuesses = 0;
+
+	function guess() {
+		let result = "";
+		let number = parseInt(document.getElementById("user").value);
+		nGuesses++;
+
+		if (number == r)
+			result = "성공입니다.";
+		else if (number < r)
+			result = "정답 숫자보다 낮습니다.";
+		else
+			result = "정답 숫자보다 높습니다.";
+
+		document.getElementById("result").value = result;
+		document.getElementById("guesses").value = nGuesses;
+		return true;
+	}
+</script>
+
+</head>
+<body>
+	<h2 align="center">숫 자 맞 추 기 게 임</h2><br><br>
+<div id="game">
+	이 게임은 컴퓨터가 생성한 숫자를 맞추는 게입니다. 숫자는 1부터 100 사이에 있습니다.
+	<br><br>
+	<form>
+		숫자: <input type="text" id="user" size="5">&nbsp;&nbsp;
+		<input type="button" value="확인" onclick="guess();"> &nbsp;&nbsp;
+		추측횟수: <input type="text" id="guesses" size="5">&nbsp;&nbsp;
+		힌트: <input type="text"	id="result" size="16">
+	</form>
+</div>
+</body>
+</html>

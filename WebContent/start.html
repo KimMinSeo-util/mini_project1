@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>start</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function btn1_click(){
+	location.href = "dice.html";
+}
+function btn2_click(){
+	location.href = "guess.html";
+}
+
+</script>
+
+<style>
+	body{
+		background-image: url('./img/palmtree.gif');
+		background-size: 90%;
+	}
+	.button:hover{
+		 background-color: #4CAF50; /* Green */
+		 border: none;
+ 		 color: white;
+ 		 padding: 15px 32px;
+  		 text-align: center;
+ 		 text-decoration: none;
+ 		 display: inline-block;
+		 font-size: 24px;
+		 margin: 4px 2px;
+		 transition-duration: 0.4s;
+		 cursor: pointer;
+	}
+	#btn1{
+		background-color: #f44336;
+  		color: white;
+		margin-left: 30%;
+		margin-top: 30%;
+	}
+	#btn2{
+		background-color: #f44336;
+  		color: white;
+		margin-left: 30%;
+		margin-top: 20%;
+	}
+
+</style>
+</head>
+<body>
+
+<button id="btn1" class="button" onclick="btn1_click()"> GAME1 </button>
+<button id="btn2" class="button" onclick="btn2_click()"> GAME2 </button>
+
+</body>
+</html>

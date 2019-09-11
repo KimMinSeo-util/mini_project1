@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+div{
+	text-align: center;
+	border: 1px solid gray;
+	font-weight: bold;
+}
+#screen1, #screen3{
+	height: 30px;
+	background-color: black;
+	color: white;
+}
+
+#screen2{
+	color: white;
+	background-color: #DEB887;
+	
+}
+#screen2{
+	height: 300px;
+}
+span{
+	position: relative;
+}
+#middle{
+	display: block;
+	top: 40%
+}
